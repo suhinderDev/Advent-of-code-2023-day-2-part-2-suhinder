@@ -9,14 +9,10 @@ fun main(){
 
 fun decodeInput(): Int{
     var sumOfIDs = 0
-    var powerSet = 0
+    var powerSet: Int
     val redCubes = 12
     val greenCubes = 13
     val blueCubes = 14
-
-
-
-
 
     val filePath = "src/adventCode1.txt"
     val file = File(filePath)
@@ -38,7 +34,7 @@ fun decodeInput(): Int{
         val gameRounds = list.last().split(";",",")
         // get game name and cubes in pair
         var gameNameCubesPairs: MutableList<Pair<Int, String>> = mutableListOf()
-        for (j in 0..gameRounds.size-1){
+        for (j in 0..<gameRounds.size){
             gameNameCubesPairs.add(Pair(gameRounds[j].filter {
                 it.isDigit()
             }.toInt()
